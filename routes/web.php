@@ -22,16 +22,20 @@ Route::post('/articles/update/{id}', [ArticleController::class, 'update']);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::post('/categories/store', [CategoryController::class, 'store']);
 Route::post('/categories/update/{id}', [CategoryController::class, 'update']);
+Route::get('/categories/delete/{id}', [CategoryController::class, 'destroy']);
 
 
 Route::get('/colors', [ColorController::class, 'index'])->name('colors');
 Route::post('/colors/store', [ColorController::class, 'store']);
 Route::post('/colors/update/{id}', [ColorController::class, 'update']);
+Route::get('/colors/delete/{id}', [ColorController::class, 'destroy']);
 
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::post('/products/store', [ProductController::class, 'store']);
-Route::post('/products/update/{id}', [ProductController::class, 'update']);
+Route::get('/products-add', [ProductController::class, 'add'])->name('products.add');
+Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
+Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
+Route::put('/products/update/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/products/delete/{id}', [ProductController::class, 'destroy']);
 
 

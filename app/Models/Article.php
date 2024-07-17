@@ -12,4 +12,9 @@ class Article extends Model
     protected $guarded = [];
 
     protected $table = 'articles';
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

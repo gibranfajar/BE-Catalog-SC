@@ -59,6 +59,16 @@
         @endif
     </script>
 
+    <script>
+        @if (Session::has('error'))
+            toastr.options = {
+                "position": "top-right",
+                "autoClose": "3000",
+                "hideProgressBar": true
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+    </script>
 
     <script src="{{ asset('assets/static/js/components/dark.js') }}"></script>
     <script src="{{ asset('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

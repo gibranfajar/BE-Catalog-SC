@@ -63,6 +63,8 @@
                                         data-bs-target="#modal-edit-{{ $color->id }}">
                                         Edit
                                     </button>
+                                    <a href="colors/delete/{{ $color->id }}"
+                                        onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

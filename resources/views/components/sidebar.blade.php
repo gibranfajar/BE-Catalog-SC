@@ -51,12 +51,12 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ request()->routeIs('articles') ? 'active' : '' }}">
+                {{-- <li class="sidebar-item {{ request()->routeIs('articles') ? 'active' : '' }}">
                     <a href="articles" class='sidebar-link'>
                         <i class="bi bi-card-text"></i>
                         <span>Articles</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="sidebar-item {{ request()->routeIs('categories') ? 'active' : '' }}">
                     <a href="categories" class='sidebar-link'>
@@ -79,7 +79,7 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ request()->routeIs('sizes') ? 'active' : '' }}">
+                {{-- <li class="sidebar-item {{ request()->routeIs('sizes') ? 'active' : '' }}">
                     <a href="sizes" class='sidebar-link'>
                         <i class="bi bi-card-checklist"></i>
                         <span>Sizes</span>
@@ -91,7 +91,7 @@
                         <i class="bi bi-card-image"></i>
                         <span>Product Images</span>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

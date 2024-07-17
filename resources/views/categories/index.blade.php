@@ -63,6 +63,8 @@
                                         data-bs-target="#modal-edit-{{ $category->id }}">
                                         Edit
                                     </button>
+                                    <a href="categories/delete/{{ $category->id }}"
+                                        onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

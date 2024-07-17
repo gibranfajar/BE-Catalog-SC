@@ -27,8 +27,8 @@ class ProductImageController extends Controller
         if ($files = $request->file('image')) {
             foreach ($files as $file) {
                 $extension = $file->getClientOriginalName();
-                $filename = rand() . '.' . $extension;
-                $path = $file->storeAs('public/products', $filename);
+                $filename = $extension . rand(1000, 9999);
+                $file->storeAs('public/products', $filename);
 
                 $imageData[] = [
                     'product_id' => $product->id,
