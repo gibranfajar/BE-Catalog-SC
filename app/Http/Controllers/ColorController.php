@@ -18,10 +18,12 @@ class ColorController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255|unique:colors',
+            'color' => 'required',
         ]);
 
         $color = new Color();
         $color->name = $request->name;
+        $color->code = $request->color;
         $color->save();
 
         return redirect()->route('colors')->with('success', 'Color created successfully.');

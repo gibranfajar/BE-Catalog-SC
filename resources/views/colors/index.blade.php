@@ -25,6 +25,21 @@
                             <div class="form-group">
                                 <input id="name" type="text" name="name" class="form-control">
                             </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="entry">
+                                        <div class="innr">
+                                            <div class="another">
+                                                <div class="color-picker" data-input-id="add-color-input"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" id="add-color-input" name="color" class="form-control"
+                                        readonly>
+                                </div>
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -50,6 +65,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Code</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -59,7 +75,12 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $color->name }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning block" data-bs-toggle="modal"
+                                    <span
+                                        style="background-color: {{ $color->code }}; display: inline-block; width: 50px; height: 20px; border-radius: 4px; margin-right: 10px;"></span>
+                                    {{ $color->code }}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                         data-bs-target="#modal-edit-{{ $color->id }}">
                                         Edit
                                     </button>
@@ -94,6 +115,23 @@
                                     <input id="name" type="text" name="name" value="{{ $color->name }}"
                                         class="form-control">
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="entry">
+                                            <div class="innr">
+                                                <div class="another">
+                                                    <div class="color-picker"
+                                                        data-input-id="edit-color-input-{{ $color->id }}"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" id="edit-color-input-{{ $color->id }}"
+                                            name="color" value="{{ $color->code }}" class="form-control"
+                                            readonly>
+                                    </div>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -110,8 +148,6 @@
                 </div>
             </div>
         @endforeach
-
-
     </section>
 </div>
 @endsection
